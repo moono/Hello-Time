@@ -28,10 +28,36 @@
                                     <rect key="frame" x="16" y="366" width="368" height="67"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gr-iy-8Oy">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Night">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="177" y="341" width="46" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="177" y="441" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="toggleMode:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2IL-hK-QlW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="9Gr-iy-8Oy"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="9Gr-iy-8Oy"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="modeButton" destination="9Gr-iy-8Oy" id="EOu-8b-Bm4"/>
                         <outlet property="timeLabel" destination="kCR-uA-DRV" id="iyB-VL-ukF"/>
                     </connections>
                 </viewController>

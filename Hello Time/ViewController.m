@@ -40,4 +40,45 @@
     [self performSelector:@selector(checkTime:) withObject:self afterDelay:1.0];
 }
 
+- (IBAction)toggleMode:(id)sender {
+    if ([self.modeButton.titleLabel.text isEqualToString:@"Night"]) {
+        self.view.backgroundColor = [UIColor blackColor];
+        self.timeLabel.textColor = [UIColor whiteColor];
+        [_modeButton setTitle:@"Day" forState:UIControlStateNormal];
+    } else {
+        self.view.backgroundColor = [UIColor whiteColor];
+        self.timeLabel.textColor = [UIColor blackColor];
+        [_modeButton setTitle:@"Night" forState:UIControlStateNormal];
+    }
+}
+
+-(void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                         duration:(NSTimeInterval)duration
+{
+    CGRect timeFrame = _timeLabel.frame;
+    float viewHeight = self.view.frame.size.height;
+    float viewWidth = self.view.frame.size.width;
+    float fontSize = 30.f;
+    BOOL hideButton = YES;
+    
+    if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+        fontSize = 40.f;
+        timeFrame.origin.y = (viewWidth / 2) - timeFrame.size.height;
+        timeFrame.size.width = viewHeight;
+    } else {
+        hideButton = NO;
+        timeFrame.origin.y = (viewHeight / 2) - timeFrame.size.height;
+        timeFrame.size.width = viewWidth;
+    }
+    
+    [_modeButton setHidden:hideButton];
+    [_timeLabel setFont:[UIFont boldSystemFontOfSize:fontSize]];
+    [_timeLabel setFrame:timeFrame];
+}
+
+- (NSUInteger) supportedInterfaceOrientations
+{
+    return (UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscape);
+}
+
 @end

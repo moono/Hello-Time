@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *modeButton;
+- (IBAction)toggleMode:(id)sender;
 
 
 @end
