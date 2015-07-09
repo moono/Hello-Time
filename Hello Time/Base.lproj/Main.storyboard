@@ -43,20 +43,38 @@
                                     <action selector="toggleMode:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2IL-hK-QlW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVz-Fd-AT5">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Turn Red">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="161" y="379" width="79" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="161" y="479" width="79" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="changeColor:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ckd-Vf-12D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="9Gr-iy-8Oy"/>
+                                <exclude reference="NVz-Fd-AT5"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="9Gr-iy-8Oy"/>
+                                <include reference="NVz-Fd-AT5"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="changeColorButton" destination="NVz-Fd-AT5" id="UuI-7K-yu9"/>
                         <outlet property="modeButton" destination="9Gr-iy-8Oy" id="EOu-8b-Bm4"/>
                         <outlet property="timeLabel" destination="kCR-uA-DRV" id="iyB-VL-ukF"/>
                     </connections>

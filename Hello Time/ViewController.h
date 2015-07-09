@@ -11,7 +11,9 @@
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *modeButton;
+@property (weak, nonatomic) IBOutlet UIButton *changeColorButton;
 - (IBAction)toggleMode:(id)sender;
+- (IBAction)changeColor:(id)sender;
 
 
 @end

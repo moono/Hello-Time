@@ -18,6 +18,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self checkTime:self];
+    
+    NSLog(@"viewDidLoad called");
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"viewDidAppear called");
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"viewWillAppear called");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +61,17 @@
         self.view.backgroundColor = [UIColor whiteColor];
         self.timeLabel.textColor = [UIColor blackColor];
         [_modeButton setTitle:@"Night" forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)changeColor:(id)sender {
+    if ([_changeColorButton.titleLabel.text isEqualToString:@"Turn Red"] ) {
+        self.view.backgroundColor = [UIColor redColor];
+        [_changeColorButton setTitle:@"Turn White" forState:UIControlStateNormal];
+    }
+    else {
+        self.view.backgroundColor = [UIColor whiteColor];
+        [_changeColorButton setTitle:@"Turn Red" forState:UIControlStateNormal];
     }
 }
 
